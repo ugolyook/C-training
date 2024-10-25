@@ -101,6 +101,8 @@ int main()
 		printf_s("\n");
 		int max_element = INT_MIN;
 		int min_element = INT_MAX;
+		int index_1=0;
+		int index_2=0;
 		for (int i = 0; i < lines_number; i++)
 		{
 			for (int j = 0; j < column_number; j++)
@@ -108,18 +110,20 @@ int main()
 				if (matrix[i][j] > max_element)
 				{
 					max_element = matrix[i][j];
+					index_1 = i;
 				}
 
 				if (matrix[i][j] < min_element)
 				{
 					min_element = matrix[i][j];
+					index_2 = i;
 				}
 			}
 		}
 		printf_s("Max element: %d\n", max_element);
-		printf_s("Line with max element: %d\n", i);
+		printf_s("Line with max element: %d\n", index_1);
 		printf_s("Min element: %d\n", min_element);
-		printf_s("Line with min element: %d\n", i);
+		printf_s("Line with min element: %d\n", index_2);
 	};
 	break;
 	}
