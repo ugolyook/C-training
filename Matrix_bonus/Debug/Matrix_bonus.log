@@ -1,0 +1,3 @@
+﻿  Source.cpp
+D:\лабы\By my own\Matrix_bonus\Source.cpp(32,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Matrix_bonus.vcxproj -> D:\лабы\By my own\Matrix_bonus\Debug\Matrix_bonus.exe
