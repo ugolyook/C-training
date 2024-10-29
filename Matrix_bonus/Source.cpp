@@ -77,7 +77,10 @@ int main()
 	printf_s("\n");
 
 	int choise_2;
-	printf_s("Choise what you want to do\n1-transpose matrix\n2-change line with max element with line that consist min element\n");
+	printf_s("Choise what you want to do:\n");
+	printf_s("1-transpose matrix\n");
+	printf_s("2-change line with max element with line that consist min element\n");
+	printf_s("3-snake\n");
 	scanf_s("%d", &choise_2);
 
 	switch (choise_2)
@@ -118,14 +121,58 @@ int main()
 					min_element = matrix[i][j];
 					line_index_min = i;
 				}
+
 			}
 		}
+
+		int temp = 0;
+		for (int j = 0; j < column_number; j++)
+		{
+			temp = matrix[line_index_min][j];
+			matrix[line_index_min][j] = matrix[line_index_max][j];
+			matrix[line_index_max][j] = temp;
+
+		}
+
+		for (int i = 0; i < lines_number; i++)
+		{
+			for (int j = 0; j < column_number; j++)
+			{
+				printf_s("%d\t", matrix[i][j]);
+			}
+			printf_s("\n");
+		}
+		printf_s("\n");
+
 		printf_s("Max element: %d\n", max_element);
 		printf_s("Line with max element: %d\n", line_index_max);
 		printf_s("Min element: %d\n", min_element);
 		printf_s("Line with min element: %d\n", line_index_min);
 	};
 	break;
+	// {1, 2, 3}
+	// {4, 5, 6}
+	// {7, 8, 9}
+	// Out:
+	// 1 4 7 8 5 2 3 6 9
+	case 3:
+	{
+		for (int j = 0; j < column_number; j++)
+		{
+			for (int i = 0; i < lines_number; i++)
+			{
+				if ((j+1) % 2 == 0)
+				{
+					printf_s("%d\t", matrix[lines_number - i - 1][j]);
+				}
+				else
+				{
+					printf_s("%d\t", matrix[i][j]);
+				}
+			}
+		}
+		printf_s("\n");
+	}
 	}
 	return 0;
 }
